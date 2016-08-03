@@ -12,10 +12,7 @@ module.exports = {
   },
 
   postprocessTree(type, tree) {
-    if (type === 'all' && this.isProductionBuild) {
-      return new TransformFilter(tree, this.options);
-    }
-    return tree;
+    return new TransformFilter(tree, this.options);
   }
 };
 
